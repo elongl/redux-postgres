@@ -23,7 +23,7 @@ class App extends Component<Props, State> {
 
   addTodo = async () => {
     await axios.post(`http://localhost:4567/addtodo/${this.state.todoValue}`);
-    store.dispatch({ type: 'ADD_TODO', todo: this.state.todoValue });
+    store.dispatch({ type: 'ADD_TODO', todos: [this.state.todoValue] });
   };
 
   getTodos = async () => {
